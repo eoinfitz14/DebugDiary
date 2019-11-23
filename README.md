@@ -1,3 +1,6 @@
+#THIS APP UTILIZES A VERSION OF HUBSPOT'S BASE WEB APP TUTORIAL.
+#ONLY USED FOR LEARNING PURPOSES
+
 # Base Web App
 
 Check it out at: https://intense-depths-97149.herokuapp.com/
