@@ -3,6 +3,7 @@ body {
   font-family: Arial, serif;
   color: #343a40;
   font-size: 22px;
+  padding-bottom: 20px;
 }
 
 h1 {
@@ -58,6 +59,31 @@ fieldset {
   text-align:left;
   width:auto;
   margin:auto;
+}
+
+table {
+  border-spacing: 1;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+table * {
+  position: relative;
+}
+table td, table th {
+  padding-left: 8px;
+}
+table thead tr {
+  height: 60px;
+  background: #623fd4;
+}
+
+th{
+  color:white;
 }
 
 /* CSS Tutorial in Resources section */
