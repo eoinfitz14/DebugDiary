@@ -1,4 +1,6 @@
-heroku local web - deploy to port 5000
-heroku open - open app in browser
-heroku login  - login 
-git push heroku master - forces a deploy of master to heroku
+heroku local web .... deploy to port 5000
+heroku open .... open app in browser
+heroku login  .... login 
+git push heroku master .... forces a deploy of master to heroku
+sudo lsof -i :5000 ..... get process ID for port 5000
+sudo kill -9 <pid> ... kill the process taking up the port

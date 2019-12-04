@@ -13,7 +13,7 @@ function handleSignIn(){
     console.log("Email console.log: " + user.email);
     // ...
   }).catch(function(error) {
-    // Handle Errors here.
+    // Handle Errors here. NOT TO BE CONFUSED WITH diaryErrorCode and diaryErrorDescription
     var errorCode = error.code;
     var errorMessage = error.message;
     // The email of the user's account used.
@@ -24,10 +24,11 @@ function handleSignIn(){
   });
 }
 
-function addMessage(postTitle,postBody){
+function addMessage(postDiaryErrorCode,postDiaryErrorDescription,postDiarySolution){
   var postData = {
-    title: postTitle,
-    body: postBody
+    diaryErrorCode: postDiaryErrorCode,
+    diaryErrorDescription: postDiaryErrorDescription,
+    diarySolution: postDiarySolution
   }
   // Get a reference to the database service
   var database = firebase.database().ref("posts");
@@ -50,11 +51,15 @@ function addMessage(postTitle,postBody){
 
 function handleMessageFormSubmit(){
   // grab values from index.ejs
-  var postTitle = $("#post-title").val();
-  var postBody = $("#post-body").val();
-  console.log("This is the post title: " + postTitle);
-  console.log("This is the post body: " + postBody);
-  addMessage(postTitle,postBody);
+  //var postTitle = $("#post-title").val();
+  //var postBody = $("#post-body").val();
+  var postDiaryErrorCode = $("post-diary-error-code").val();
+  var postDiaryErrorDescription = $("post-diary-error-description").val();
+  var postDiarySolution = $("post-diary-solution").val();
+  console.log("This is the post diary error code: " + postDiaryErrorCode);
+  console.log("This is the post diary error description: " + postDiaryErrorDescription);
+  console.log("This is the post diary solution description: " + postDiarySolution);
+  addMessage(postDiaryErrorCode,postDiaryErrorDescription,postDiarySolution);
 
 }
 
@@ -67,7 +72,7 @@ function getPosts(){
     for(var postKey in posts){
       var post = posts[postKey];
       // now target div in index.ejs to display the post variable
-      $("#post-listing").append("<div>"+post.title+" - "+post.body+"</div>");
+      $("#post-listing").append("<div>"+post.diaryErrorCode+" - "+post.diaryDescription+" - "+post.diarySolution+"</div>");
     }
   });
 }
